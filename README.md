@@ -7,6 +7,7 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 - **Random Sampling**: Extracts 10 random consecutive data points from each file.
 - **Stock Price Prediction**: Predicts stock prices for the next three days using historical data.
 - **Output File Creation**: Saves predictions in CSV format under the output_results directory.
+- **Log Reporter**: Generates a html report with all the logs from execution.
 
 ---
 ### Technologies Used
@@ -107,3 +108,4 @@ To execute the project, make sure you are in the home directory **'lseg_challeng
 - Improved Prediction: Use machine learning algorithms for more accurate predictions.
 - Visualization: Add support for generating graphs of stock trends.
 - Use Containers: Provide a docker file in the repo.
+- Rich Reporter: Use Rich reporter, which make the report more presentable and interactive.
