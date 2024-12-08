@@ -6,7 +6,7 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 - **File Processing**: Processing CSV files from dataset directories.
 - **Random Sampling**: Extracts 10 random consecutive data points from each file.
 - **Stock Price Prediction**: Predicts stock prices for the next three days using historical data.
-- **Dynamic Output**: Saves predictions in CSV format under the output_results directory.
+- **Output File Creation**: Saves predictions in CSV format under the output_results directory.
 
 ---
 ### Technologies Used
@@ -22,7 +22,6 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 ├── lseg_challenge/                  # Root directory
 │   ├── log_reports                  # Directory containing log reports after execution.
 │   ├── node_modules                 # Directory containing all node dependencies
-│   ├── output_results/              # Directory for saving prediction CSV files
 │   ├── stockPredictionSystem        # Directory containing functions, specs, testdata
 │   │   ├── functions                # Subdirectory containing functions
 │   │   ├── spec_files               # Subdirectory containing main program file
@@ -41,9 +40,14 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 2. **Clone the Repository**:
    ```bash
    git clone [<repository_url>](https://github.com/syedshoaib577/lseg_challenege.git)
+   ```
+   or
+   **Download the Repo ZIP**:
+      - Extract and open the project
+   
    
 ### Install Dependencies
-Run the following command to install the required packages:
+Run the following command in terminal to install the required packages:
 ```bash
    npm install
 ```
@@ -76,11 +80,11 @@ To execute the project, make sure you are in the home directory **'lseg_challeng
 
 - Prediction Algorithm:
     - Determines the second-highest stock price (n+1).
-    - Uses n+1 to calculate n+2 and n+3 predictions based on a custom formula.
+    - Uses n and n+1 to calculate n+2 and n+3 predictions based on a custom formula.
 
 - Output Generation:
     - Appends predictions to the original data.
-    - Saves results to the output_results/ directory as StockID_predictions.csv.
+    - Saves results to the output_results/ directory as StockID-Predictions.csv.
 
 ### Sample CSV Output:
 ```csv
@@ -99,6 +103,7 @@ To execute the project, make sure you are in the home directory **'lseg_challeng
 - Prints detailed error messages for debugging.
 
 ### Future Enhancements
-- Visualization: Add support for generating graphs of stock trends.
+- Implementation: Follow object-oriented programming practices.
 - Improved Prediction: Use machine learning algorithms for more accurate predictions.
-- Dynamic Configuration: Support environment-based configurations.
+- Visualization: Add support for generating graphs of stock trends.
+- Use Containers: Provide a docker file in the repo.
