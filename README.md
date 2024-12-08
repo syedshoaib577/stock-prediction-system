@@ -1,38 +1,32 @@
 # lseg_challenege | stock-prediction-system
- The Stock Prediction System forecasts the stock prices for the next 3 days based on historical data. The predictions are stored in CSV files for each stock, allowing for easy analysis.
+The Stock Prediction System forecasts the stock prices for the next 3 days based on historical data. The predictions are stored in CSV files for each stock, allowing for easy analysis.
 
 ---
-
-## Features
-
-- **Recursive File Processing**: Processes CSV files from nested directories.
+### Features
+- **File Processing**: Processing CSV files from dataset directories.
 - **Random Sampling**: Extracts 10 random consecutive data points from each file.
 - **Stock Price Prediction**: Predicts stock prices for the next three days using historical data.
-- **Dynamic Output**: Saves predictions in CSV format under the output_results.
+- **Dynamic Output**: Saves predictions in CSV format under the output_results directory.
 
 ---
-
-## Technologies Used
-
+### Technologies Used
 - **Node.js**: Runtime environment for executing JavaScript code.
 - **fs**: File system module for reading and writing files.
 - **csv-parser**: Library for parsing CSV files.
 - **Promises**: For handling asynchronous operations.
 
 ---
-
-## Project Structure
-
+### Project Structure
 ```plaintext
 .
-├── lseg_challenge/
+├── lseg_challenge/                  # Root directory
 │   ├── log_reports                  # Directory containing log reports after execution.
 │   ├── node_modules                 # Directory containing all node dependencies
 │   ├── output_results/              # Directory for saving prediction CSV files
 │   ├── stockPredictionSystem        # Directory containing functions, specs, testdata
 │   │   ├── functions                # Subdirectory containing functions
 │   │   ├── spec_files               # Subdirectory containing main program file
-│   │   │   ├── stockPrediction.js   # Main application file
+│   │   │   ├── stockPrediction.js   # Main program file
 │   │   ├── test_data                # Subdirectories containing dataset with exchanges and respective files
 │   │   │   ├── stockExchanges/      # Subdirectories for stock exchange and its files
 │   └── output_results/              # Directory for saving prediction CSV files
@@ -42,67 +36,63 @@
 
 ---
 ## Setup and Usage
-
 ### Prerequisites
-
 1. **Install Node.js**: Ensure that Node.js is installed on your system. [Download Node.js here](https://nodejs.org/).
 2. **Clone the Repository**:
    ```bash
    git clone [<repository_url>](https://github.com/syedshoaib577/lseg_challenege.git)
-   cd stockPredictionSystem
    
 ### Install Dependencies
 Run the following command to install the required packages:
 ```bash
    npm install
 ```
+
 ### Input Data Structure
 Place the input CSV files under the test_data/stockExchanges/ directory. Each CSV file must follow the structure:
-
-```php
+```csv
    Stock-ID,Timestamp (dd-mm-yyyy),Stock Price Value
    <stock_id>,<date>,<price>
 ```
 
-...
 ### Running the Project
-To execute the project, run:
-
+To execute the project, make sure you are in the home directory **'lseg_challenge'** and give absolute path of the **stockPrediction.js** file:
+**example on mac:** syedmacos@Syeds-MacBook-Pro lseg_challenge % **node "/Users/syedmacos/MyLearnings/lseg_challenge/stockPredictionSystem/spec_files/stockPrediction.js"**
 ```bash
-node stockPrediction.js
+   node "/../lseg_challenge/stockPredictionSystem/spec_files/stockPrediction.js"
 ```
+
 #### Configurable Parameters
 - **baseDirectory:** Specifies the directory containing stock exchange data. Default: test_data/stockExchanges/.
 - **maxFilesPerDirectory:** Limits the number of CSV files processed per directory. Default: 2.
 
 ### How It Works
-Directory Traversal:
+- Directory Traversal:
+    - Recursively scans directories for CSV files.
+    - Processes up to maxFilesPerDirectory files in each directory.
 
-Recursively scans directories for CSV files.
-Processes up to maxFilesPerDirectory files in each directory.
-Data Sampling:
+- Data Sampling:
+    - Extracts 10 consecutive rows randomly from each file.
 
-Extracts 10 consecutive rows randomly from each file.
-Prediction Algorithm:
+- Prediction Algorithm:
+    - Determines the second-highest stock price (n+1).
+    - Uses n+1 to calculate n+2 and n+3 predictions based on a custom formula.
 
-Determines the second-highest stock price (n+1).
-Uses n+1 to calculate n+2 and n+3 predictions based on a custom formula.
-Output Generation:
-
-Appends predictions to the original data.
-Saves results to the output_results/ directory as StockID_predictions.csv.
+- Output Generation:
+    - Appends predictions to the original data.
+    - Saves results to the output_results/ directory as StockID_predictions.csv.
 
 ### Sample CSV Output:
 ```csv
-Stock-ID,Timestamp,Stock Price Value
-ABC123,01-12-2024,150.25
-ABC123,02-12-2024,151.35
-ABC123,03-12-2024,152.45
-ABC123,04-12-2024,153.75
-...
-ABC123,05-12-2024,155.50
-ABC123,06-12-2024,156.25
+    Stock-ID,Timestamp,Stock Price Value
+    ABC123,01-12-2024,150.25
+    ...
+    ABC123,10-12-2024,155.50
+    ABC123,11-12-2024,156.25
+    ABC123,12-12-2024,157.55
+    ABC123,13-12-2024,156.15
 ```
+
 ### Error Handling
 - Logs errors for missing or unreadable files.
 - Skips files without valid data rows.
