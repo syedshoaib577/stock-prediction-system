@@ -72,20 +72,23 @@ To execute the project, make sure you are in the home directory **'lseg_challeng
 - **maxFilesPerDirectory:** Limits the number of CSV files processed per directory. Default: 2.
 
 ### How It Works
-- Directory Traversal:
+- **Directory Traversal**:
     - Recursively scans directories for CSV files.
     - Processes up to maxFilesPerDirectory files in each directory.
 
-- Data Sampling:
+- **Data Sampling**:
     - Extracts 10 consecutive rows randomly from each file.
 
-- Prediction Algorithm:
+- **Prediction Algorithm**:
     - Determines the second-highest stock price (n+1).
     - Uses n and n+1 to calculate n+2 and n+3 predictions based on a custom formula.
 
-- Output Generation:
+- **Output Generation**:
     - Appends predictions to the original data.
     - Saves results to the output_results/ directory as StockID-Predictions.csv.
+
+- **Execution Log Reporter**:
+    - Generates a html report with all the logs from execution.
 
 ### Sample CSV Output:
 ```csv
@@ -104,8 +107,9 @@ To execute the project, make sure you are in the home directory **'lseg_challeng
 - Prints detailed error messages for debugging.
 
 ### Future Enhancements
-- Implementation: Follow object-oriented programming practices.
-- Improved Prediction: Use machine learning algorithms for more accurate predictions.
-- Visualization: Add support for generating graphs of stock trends.
-- Use Containers: Provide a docker file in the repo.
-- Rich Reporter: Use Rich reporter, which make the report more presentable and interactive.
+- **Implementation**: Follow object-oriented programming practices.
+- **Improved Prediction**: Use machine learning algorithms for more accurate predictions.
+- **Visualization**: Add support for generating graphs of stock trends.
+- **Rich Reporter**: Use Rich reporter, which make the report more presentable and interactive.
+- **Use Containers**: Provide a docker file in the repo.
+---
