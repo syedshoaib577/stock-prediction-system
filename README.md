@@ -40,7 +40,7 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 1. **Install Node.js**: Ensure that Node.js is installed on your system. [Download Node.js here](https://nodejs.org/).
 2. **Clone the Repository**:
    ```bash
-   git clone [<repository_url>](https://github.com/syedshoaib577/lseg_challenege.git)
+   git clone [<repository_url>](https://github.com/syedshoaib577/stock-prediction-system.git)
    ```
    or
    **Download the Repo ZIP**:
@@ -64,7 +64,7 @@ Place the input CSV files under the test_data/stockExchanges/ directory. Each CS
 To execute the project, make sure you are in the home directory **'lseg_challenge'** and give absolute path of the **stockPrediction.js** file:
 **example on mac:** syedmacos@Syeds-MacBook-Pro lseg_challenge % **node "/Users/syedmacos/MyLearnings/lseg_challenge/stockPredictionSystem/spec_files/stockPrediction.js"**
 ```bash
-   node "/../lseg_challenge/stockPredictionSystem/spec_files/stockPrediction.js"
+   node "/../stock-prediction-system/stockPredictionSystem/spec_files/stockPrediction.js"
 ```
 
 #### Configurable Parameters
