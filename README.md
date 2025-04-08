@@ -1,4 +1,4 @@
-# lseg_challenge | stock-prediction-system
+# stock-prediction-system
 The Stock Prediction System forecasts the stock prices for the next 3 days based on historical data. The predictions are stored in CSV files for each stock, allowing for easy analysis.
 
 ---
@@ -20,7 +20,7 @@ The Stock Prediction System forecasts the stock prices for the next 3 days based
 ### Project Structure
 ```plaintext
 .
-├── lseg_challenge/                  # Root directory
+├── stock-prediction-system/         # Root directory
 │   ├── log_reports                  # Directory containing log reports after execution.
 │   ├── node_modules                 # Directory containing all node dependencies
 │   ├── stockPredictionSystem        # Directory containing functions, specs, testdata
